@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,141 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="q1F-2t-JJ7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-Lm-SH6">
+                                <rect key="frame" x="212" y="687" width="158" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Next Qn" backgroundImage="button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="nxtQn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIH-Q4-rln"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="         Score:                   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-pJ-qoy">
+                                <rect key="frame" x="124.5" y="84" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                               " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T31-rL-ZEE">
+                                <rect key="frame" x="60.5" y="164" width="293" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG5-AJ-K0e">
+                                <rect key="frame" x="150" y="280" width="114" height="39"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="                                 ">
+                                    <color key="titleShadowColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cbo-t1-PVQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B91-yG-vr2">
+                                <rect key="frame" x="150" y="369" width="114" height="39"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="                                 "/>
+                                <connections>
+                                    <action selector="answer2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieB-hf-eQJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKp-fc-MK3">
+                                <rect key="frame" x="150" y="458" width="114" height="39"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="                                 "/>
+                                <connections>
+                                    <action selector="answer3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l4M-Ap-RIx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-IX-cSU">
+                                <rect key="frame" x="150" y="547" width="114" height="39"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="                                 "/>
+                                <connections>
+                                    <action selector="answer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MNc-wn-Kxs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXh-df-HSW">
+                                <rect key="frame" x="40" y="687" width="164" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Answer" backgroundImage="button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="actAnsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T5g-WO-oyj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bKp-fc-MK3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Cc-Vs-Twh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wG5-AJ-K0e" secondAttribute="trailing" constant="150" id="AYq-Wy-apW"/>
+                            <constraint firstItem="wG5-AJ-K0e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BCj-s9-IQo"/>
+                            <constraint firstItem="bKp-fc-MK3" firstAttribute="top" secondItem="B91-yG-vr2" secondAttribute="bottom" constant="50" id="BWv-Jk-HrN"/>
+                            <constraint firstItem="B91-yG-vr2" firstAttribute="top" secondItem="wG5-AJ-K0e" secondAttribute="bottom" constant="50" id="EYE-Lx-dN4"/>
+                            <constraint firstAttribute="bottom" secondItem="q1F-2t-JJ7" secondAttribute="bottom" id="GgA-pM-ipP"/>
+                            <constraint firstItem="q1F-2t-JJ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GlR-Oj-LwA"/>
+                            <constraint firstItem="T31-rL-ZEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JiE-Nq-m3w"/>
+                            <constraint firstItem="Zeq-pJ-qoy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L1f-mB-nj0"/>
+                            <constraint firstItem="Phh-IX-cSU" firstAttribute="top" secondItem="bKp-fc-MK3" secondAttribute="bottom" constant="50" id="Lmm-3b-DUZ"/>
+                            <constraint firstItem="wG5-AJ-K0e" firstAttribute="top" secondItem="T31-rL-ZEE" secondAttribute="bottom" constant="81" id="Lne-am-TaZ"/>
+                            <constraint firstItem="Zeq-pJ-qoy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lvj-7H-2Yh"/>
+                            <constraint firstItem="T31-rL-ZEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UGE-Lp-cNY"/>
+                            <constraint firstItem="Phh-IX-cSU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vld-hD-nJV"/>
+                            <constraint firstItem="Zeq-pJ-qoy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="XjK-p7-8VX"/>
+                            <constraint firstItem="q1F-2t-JJ7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aaQ-0l-jse"/>
+                            <constraint firstItem="wG5-AJ-K0e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="fDx-du-org"/>
+                            <constraint firstItem="B91-yG-vr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fbR-qR-qPT"/>
+                            <constraint firstItem="q1F-2t-JJ7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h8a-g1-Aeo"/>
+                            <constraint firstItem="bKp-fc-MK3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="k1M-9Z-02N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B91-yG-vr2" secondAttribute="trailing" constant="150" id="kXu-sW-lpj"/>
+                            <constraint firstItem="Phh-IX-cSU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="l7i-IO-oMT"/>
+                            <constraint firstItem="T31-rL-ZEE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="120" id="lWP-qi-ICO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bKp-fc-MK3" secondAttribute="trailing" constant="150" id="set-Bh-k1m"/>
+                            <constraint firstItem="Zeq-pJ-qoy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZC-xR-Cf7"/>
+                            <constraint firstItem="B91-yG-vr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="vko-Xi-hnn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Phh-IX-cSU" secondAttribute="trailing" constant="150" id="yyi-Yy-j9R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="ans1Label" destination="wG5-AJ-K0e" id="665-Jc-Ftr"/>
+                        <outlet property="ans2Label" destination="B91-yG-vr2" id="Do5-f9-5VZ"/>
+                        <outlet property="ans3Label" destination="bKp-fc-MK3" id="SJK-4Y-L71"/>
+                        <outlet property="ans4Label" destination="Phh-IX-cSU" id="5fv-f4-ltX"/>
+                        <outlet property="ansText" destination="LXh-df-HSW" id="2tf-gP-oxL"/>
+                        <outlet property="nextQnText" destination="r2P-Lm-SH6" id="Yj0-7P-445"/>
+                        <outlet property="questionLabel" destination="T31-rL-ZEE" id="ZFq-YA-bp0"/>
+                        <outlet property="scoreLabel" destination="Zeq-pJ-qoy" id="5OX-Mn-cBF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appBackground" width="1080" height="1920"/>
+        <image name="button" width="512" height="211"/>
+    </resources>
 </document>
