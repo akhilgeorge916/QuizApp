@@ -9,11 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var score:Int = 0;
+    var scoreCalc = ScoreCalc()
     var qs = quizQuestions(questions: "vqweaeb",answers: ["aaa","vvv","bbb","ccc","ddd"],correctAnswer: "aaa")
     
     @IBOutlet weak var nextQnText: UIButton!
-   
     @IBOutlet weak var ansText: UIButton!
     
     @IBOutlet weak var ans1Label: UIButton!
@@ -21,15 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var ans3Label: UIButton!
     @IBOutlet weak var ans4Label: UIButton!
     
-    
-    
     @IBOutlet weak var actualAns: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     
-   
-   
-    
+
     @IBAction func nxtQn(_ sender: Any) {
         if(nextQnText.titleLabel?.text=="QUIT")
         {
@@ -65,8 +60,8 @@ class ViewController: UIViewController {
     @IBAction func answer1(_ sender: Any) {
         if(ans1Label.titleLabel?.text == qs.correctAnswer)
         {
-            score+=1
-            scoreLabel.text="score " + String(score) + "/5"
+            scoreCalc.scoreMgmt()
+            scoreLabel.text="score " + String(scoreCalc.scoreDisplay()) + "/5"
         }
         if(iteration<5)
         {
@@ -81,11 +76,12 @@ class ViewController: UIViewController {
             viewExit()
         }
     }
+    
     @IBAction func answer2(_ sender: Any) {
         if(ans2Label.titleLabel?.text == qs.correctAnswer)
         {
-            score+=1
-            scoreLabel.text="score " + String(score) + "/5"
+            scoreCalc.scoreMgmt()
+            scoreLabel.text="score " + String(scoreCalc.scoreDisplay()) + "/5"
         }
          if(iteration<5)
         {
@@ -103,8 +99,8 @@ class ViewController: UIViewController {
     @IBAction func answer3(_ sender: Any) {
         if(ans3Label.titleLabel?.text == qs.correctAnswer)
         {
-            score+=1
-            scoreLabel.text="score " + String(score) + "/5"
+            scoreCalc.scoreMgmt()
+            scoreLabel.text="score " + String(scoreCalc.scoreDisplay()) + "/5"
         }
         if(iteration<5)
         {
@@ -123,8 +119,8 @@ class ViewController: UIViewController {
     @IBAction func answer4(_ sender: Any) {
         if(ans4Label.titleLabel?.text == qs.correctAnswer)
         {
-            score+=1
-            scoreLabel.text="score " + String(score) + "/5"
+            scoreCalc.scoreMgmt()
+            scoreLabel.text="score " + String(scoreCalc.scoreDisplay()) + "/5"
         }
         if(iteration<5)
         {
@@ -140,7 +136,7 @@ class ViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
-        score=0
+        scoreCalc.scoreRestart()
         self.scoreLabel.isHidden=false
         self.ans1Label.isHidden=false
         self.ans2Label.isHidden=false
@@ -159,8 +155,7 @@ class ViewController: UIViewController {
     }
     func viewExit() {
         
-       
-        questionLabel.text="score " + String(score) + "/5"
+        questionLabel.text="score " + String(scoreCalc.scoreDisplay()) + "/5"
         self.scoreLabel.isHidden=true
         self.ans1Label.isHidden=true
         self.ans2Label.isHidden=true
@@ -208,4 +203,17 @@ func displayQn() -> quizQuestions
         
     }
     return questionArray[4]
+}
+class ScoreCalc
+{
+    var score:Int = 0
+    func scoreMgmt() {
+        score = score + 1
+    }
+    func scoreDisplay() -> Int{
+        return score;
+    }
+    func scoreRestart(){
+        score = 0;
+    }
 }
